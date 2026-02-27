@@ -7,10 +7,11 @@
     "start": "pm2 start bmb.js --deep-monitoring --attach --name SESSIONSCANNERt",
     "stop": "pm2 stop SESSIONSCANNERt",
     "restart": "pm2 restart SESSIONSCANNERt",
-    "heroku-prebuild": "npm install --force libsignal-node@2.0.1"
+    "heroku-prebuild": "npm cache clean --force && npm install --no-package-lock --force libsignal-node@2.0.1"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "github:xhclintohn/Baileys",
+    "libsignal-node": "2.0.1",
     "@adiwajshing/keyed-db": "^0.2.4",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
@@ -22,17 +23,7 @@
     "megajs": "1.1.7",
     "pm2": "^5.4.0",
     "async-mutex": "0.4.1",
-    "jimp": "^0.16.13",
-    "libsignal-node": "2.0.1"
-  },
-  "overrides": {
-    "libsignal-node": "2.0.1",
-    "@whiskeysockets/baileys": {
-      "libsignal-node": "2.0.1"
-    }
-  },
-  "resolutions": {
-    "libsignal-node": "2.0.1"
+    "jimp": "^0.16.13"
   },
   "engines": {
     "node": "20.x",
